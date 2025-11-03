@@ -1,21 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>My Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Palhares - Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Fernando Palhares - Python and JavaScript developer tinkering in web applications and automation tools">
     <link rel="stylesheet" href="style.css">
     <meta name="google-adsense-account" content="ca-pub-6255805898920780">
   </head>
-  <body>
-    <header>
-      <h1>My Projects</h1>
-      <p>Welcome to my collection of projects. I've created various tools and scripts for personal and professional use.</p>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h2>Fernando Palhares</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Welcome to My Developer Portfolio</h1>
+        <p class="subtitle">Python & JavaScript Developer | Building Practical Tools & Interactive Experiences</p>
     </header>
-    <div class="project-grid">
-      <ul>
-        <li><a href="https://palharesf.github.io/sg-minesweeper/">SG Minesweeper</a></li>
-        <li><a href="https://github.com/palharesf/user_scripts">Userscripts</a></li>
-      </ul>
-    </div>
-  </body>
+
+    <main>
+        <section class="intro">
+            <h2>What I Do</h2>
+            <p>I'm a developer passionate about creating practical applications and tools that solve real problems. My work spans from interactive browser games to automation scripts that improve daily workflows. I specialize in Python and JavaScript, building everything from web applications to userscripts that enhance the browsing experience.</p>
+            <p>This site showcases my personal projects, technical writings, and experiments in web development. Whether you're here to play one of my games, learn from my code, or just explore what I've built, I hope you find something interesting.</p>
+        </section>
+
+        <section class="featured-projects">
+            <h2>Featured Projects</h2>
+            
+            <div class="project-card">
+                <h3>SG Minesweeper</h3>
+                <p>A modern take on the classic Minesweeper game, built entirely with vanilla JavaScript. Features multiple difficulty levels, custom board sizes, and a clean, intuitive interface. The game includes smart first-click logic to ensure you never hit a mine on your opening move, and implements the classic flagging system for marking suspected mines.</p>
+                <p><strong>Technologies:</strong> JavaScript, HTML5, CSS3</p>
+                <a href="https://palharesf.github.io/sg-minesweeper/" class="btn">Play Now</a>
+                <a href="minesweeper-info.html" class="btn btn-secondary">Learn More</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Userscripts Collection</h3>
+                <p>A curated collection of userscripts designed to enhance and customize web browsing experiences. These scripts add functionality, improve interfaces, and automate repetitive tasks across various websites. Each script is thoroughly documented and regularly maintained to ensure compatibility with modern browsers.</p>
+                <p><strong>Technologies:</strong> JavaScript, Tampermonkey/Greasemonkey API</p>
+                <a href="https://github.com/palharesf/user_scripts" class="btn">View on GitHub</a>
+            </div>
+        </section>
+
+        <section class="recent-posts">
+            <h2>Recent Blog Posts</h2>
+            <div class="blog-preview">
+                <h3><a href="blog-minesweeper-development.html">Building SG Minesweeper: Development Journey</a></h3>
+                <p class="date">November 2024</p>
+                <p>A deep dive into the development process of my minesweeper game, covering the algorithms, design decisions, and challenges I encountered along the way...</p>
+            </div>
+            <div class="blog-preview">
+                <h3><a href="blog-userscripts.html">Why Userscripts Still Matter in Modern Web Development</a></h3>
+                <p class="date">October 2024</p>
+                <p>Exploring the continued relevance of userscripts for personalizing web experiences and improving productivity across the web...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Fernando Palhares. All rights reserved.</p>
+    </footer>
+</body>
 </html>

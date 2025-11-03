@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SG Minesweeper - Game Info</title>
+    <meta name="description" content="Learn about SG Minesweeper - a modern JavaScript implementation of the classic game">
+    <meta name="google-adsense-account" content="ca-pub-6255805898920780">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h2>Fernando Palhares</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <h1>SG Minesweeper</h1>
+            <p><strong>A Modern JavaScript Implementation of the Classic Game</strong></p>
+            
+            <h2>About the Game</h2>
+            <p>SG Minesweeper is my take on the timeless logic puzzle game that has been entertaining players since the early days of personal computing. This web-based version brings all the strategic gameplay you love, with a clean modern interface and smooth performance that works seamlessly across all devices.</p>
+            
+            <p>The game challenges players to clear a rectangular board containing hidden mines without detonating any of them. Using clues about the number of neighboring mines in each field, players must logically deduce the locations of mines and flag them appropriately.</p>
+
+            <h2>How to Play</h2>
+            <h3>Basic Rules</h3>
+            <p>The objective is simple: reveal all cells on the board that don't contain mines. Each revealed cell shows a number indicating how many of the eight adjacent cells contain mines. If you reveal a cell containing a mine, the game ends.</p>
+
+            <h3>Controls</h3>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>Left Click:</strong> Reveal a cell</li>
+                <li><strong>Right Click:</strong> Place or remove a flag to mark suspected mines</li>
+                <li><strong>First Click Safety:</strong> The game ensures your first click never hits a mine, giving you a fair start every time</li>
+            </ul>
+
+            <h3>Strategy Tips</h3>
+            <p>Success in Minesweeper comes from careful logical deduction. Start by identifying obvious patterns: if a cell shows "1" and touches only one unrevealed cell, that cell must contain a mine. Build outward from safe areas, using the numbers to create a mental map of mine locations.</p>
+            
+            <p>Advanced players learn to recognize common patterns like "1-2-1" formations and corner configurations. When logical deduction runs out, probability becomes your friend - cells adjacent to fewer numbers are statistically less likely to contain mines.</p>
+
+            <h2>Difficulty Levels</h2>
+            <p>The game offers multiple difficulty levels to challenge players of all skill levels:</p>
+            
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>Beginner:</strong> 9x9 grid with 10 mines - perfect for learning the mechanics</li>
+                <li><strong>Intermediate:</strong> 16x16 grid with 40 mines - for developing strategy</li>
+                <li><strong>Expert:</strong> 30x16 grid with 99 mines - the ultimate challenge for experienced players</li>
+                <li><strong>Custom:</strong> Create your own difficulty with custom board dimensions and mine counts</li>
+            </ul>
+
+            <h2>Technical Implementation</h2>
+            <p>SG Minesweeper is built entirely with vanilla JavaScript, HTML5, and CSS3, with no external dependencies. This approach ensures fast loading times and reliable performance across all modern browsers. The game logic handles board generation, mine placement, recursive cell revealing, and win/loss detection entirely client-side.</p>
+
+            <p>Key technical features include:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li>Efficient flood-fill algorithm for revealing adjacent empty cells</li>
+                <li>Random mine distribution with first-click safety guarantee</li>
+                <li>Responsive design that adapts to different screen sizes</li>
+                <li>Clean, maintainable code structure for easy modification and learning</li>
+            </ul>
+
+            <h2>Play Now</h2>
+            <p>Ready to test your logical deduction skills? Click the button below to start playing!</p>
+            <a href="https://palharesf.github.io/sg-minesweeper/" class="btn">Play SG Minesweeper</a>
+            <a href="https://github.com/palharesf/sg-minesweeper" class="btn btn-secondary">View Source Code</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Fernando Palhares. All rights reserved.</p>
+    </footer>
+</body>
+</html>
