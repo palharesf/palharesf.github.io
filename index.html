@@ -12,124 +12,187 @@
     <meta name="google-adsense-account" content="ca-pub-6255805898920780" />
   </head>
   <body>
-    <header class="header">
-      <div class="header-section">
-        <h1 class="title">Fernando Palhares</h1>
-        <h3 class="links">
-          <a href="index.html">Home</a> | <a href="about.html">About</a> |
-          <a href="projects.html">Projects</a> | <a href="blog.html">Blog</a>
-        </h3>
-      </div>
-    </header>
-
-    <div class="hero">
-      <h1>Welcome to My Developer Portfolio</h1>
-      <p class="subtitle">
-        Python & JavaScript Developer | Building Practical Tools & Interactive
-        Experiences
-      </p>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
-    <main>
-      <section class="intro">
-        <h2>What I Do</h2>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#home" class="logo">
+            <img src="/assets/pfp.png" alt="Fernando Palhares" class="logo-image">
+            <span class="logo-text">Fernando Palhares</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <p class="hero-intro">Hi, my name is</p>
+            <h1 class="hero-title">Fernando Palhares.</h1>
+            <h2 class="hero-subtitle">I build things for the web.</h2>
+            <p class="hero-description">
+                I'm a developer passionate about creating practical applications and tools that solve real problems. 
+                My work spans from interactive browser games to automation scripts that improve daily workflows. 
+                I specialize in Python and JavaScript, building everything from web applications to userscripts 
+                that enhance the browsing experience.
+            </p>
+            <a href="#projects" class="cta-button">Check out my work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-heading">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm Fernando Palhares, a developer with a passion for building practical, efficient tools 
+                        that solve real problems. My journey into programming started with curiosity about how things 
+                        work under the hood, and that curiosity continues to drive my learning and development today.
+                    </p>
+                    <p>
+                        I believe in the power of simple, well-crafted code. While modern development often pushes us 
+                        toward complex frameworks and heavy dependencies, I find satisfaction in building lean, 
+                        performant applications that do exactly what they need to do.
+                    </p>
+                    <p>
+                        My primary languages are Python and JavaScript, which together cover a remarkable range of 
+                        use cases. I'm also exploring ways to make my projects more accessible and educational for 
+                        other developers through detailed documentation and clean, commented source code.
+                    </p>
+                    <p>Here are some technologies I work with:</p>
+                    <ul class="tech-stack">
+                        <li>JavaScript (ES6+)</li>
+                        <li>Python</li>
+                        <li>HTML & CSS</li>
+                        <li>Node.js</li>
+                        <li>Git & GitHub</li>
+                        <li>Browser APIs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-heading">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <p class="project-overline">Featured Project</p>
+                        <h3 class="project-title">SG Minesweeper</h3>
+                        <div class="project-description">
+                            A modern take on the classic Minesweeper game, built entirely with vanilla JavaScript. 
+                            Features multiple difficulty levels, custom board sizes, and a clean, intuitive interface. 
+                            Implements smart first-click logic and efficient flood-fill algorithms for optimal gameplay.
+                        </div>
+                        <ul class="project-tech">
+                            <li>JavaScript</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>DOM Manipulation</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/palharesf/sg-minesweeper" target="_blank">GitHub</a>
+                            <a href="https://palharesf.github.io/sg-minesweeper/" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <div class="project-image-wrapper">
+                            <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Minesweeper+Game" alt="SG Minesweeper">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <p class="project-overline">Featured Project</p>
+                        <h3 class="project-title">Userscripts Collection</h3>
+                        <div class="project-description">
+                            A curated collection of userscripts designed to enhance web browsing experiences across various 
+                            websites. These scripts add functionality, improve interfaces, and automate repetitive tasks. 
+                            Built with compatibility and maintainability as top priorities.
+                        </div>
+                        <ul class="project-tech">
+                            <li>JavaScript</li>
+                            <li>Tampermonkey API</li>
+                            <li>Browser Extensions</li>
+                            <li>Web APIs</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/palharesf/user_scripts" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <div class="project-image-wrapper">
+                            <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Userscripts" alt="Userscripts Collection">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact">
+                <p class="hero-intro">What's Next?</p>
+                <h2 class="contact-title">Get In Touch</h2>
+                <p class="contact-description">
+                    I'm always interested in connecting with other developers, discussing projects, or hearing 
+                    feedback on my work. Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+                <a href="https://github.com/palharesf" class="cta-button" target="_blank">Say Hello</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
         <p>
-          I'm a developer passionate about creating practical applications and
-          tools that solve real problems. My work spans from interactive browser
-          games to automation scripts that improve daily workflows. I specialize
-          in Python and JavaScript, building everything from web applications to
-          userscripts that enhance the browsing experience.
+            Built by <a href="https://github.com/palharesf" target="_blank">Fernando Palhares</a> • 
+            <a href="https://github.com/palharesf/palharesf.github.io" target="_blank">View Source</a> • 
+            <a href="https://ko-fi.com/fernandopa" target="_blank">Buy me a coffee</a>
         </p>
-        <p>
-          This site showcases my personal projects, technical writings, and
-          experiments in web development. Whether you're here to play one of my
-          games, learn from my code, or just explore what I've built, I hope you
-          find something interesting.
-        </p>
-      </section>
+    </footer>
 
-      <section class="featured-projects">
-        <h2>Featured Projects</h2>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-        <div class="project-card">
-          <h3>SG Minesweeper</h3>
-          <p>
-            A modern take on the classic Minesweeper game, built entirely with
-            vanilla JavaScript. Features multiple difficulty levels, custom
-            board sizes, and a clean, intuitive interface. The game includes
-            smart first-click logic to ensure you never hit a mine on your
-            opening move, and implements the classic flagging system for marking
-            suspected mines.
-          </p>
-          <p><strong>Technologies:</strong> JavaScript, HTML5, CSS3</p>
-          <a href="https://palharesf.github.io/sg-minesweeper/" class="btn"
-            >Play Now</a
-          >
-          <a href="minesweeper-info.html" class="btn btn-secondary"
-            >Learn More</a
-          >
-        </div>
-
-        <div class="project-card">
-          <h3>Userscripts Collection</h3>
-          <p>
-            A curated collection of userscripts designed to enhance and
-            customize web browsing experiences. These scripts add functionality,
-            improve interfaces, and automate repetitive tasks across various
-            websites. Each script is thoroughly documented and regularly
-            maintained to ensure compatibility with modern browsers.
-          </p>
-          <p>
-            <strong>Technologies:</strong> JavaScript, Tampermonkey/Greasemonkey
-            API
-          </p>
-          <a href="https://github.com/palharesf/user_scripts" class="btn"
-            >View on GitHub</a
-          >
-        </div>
-      </section>
-
-      <section class="recent-posts">
-        <h2>Recent Blog Posts</h2>
-        <div class="blog-preview">
-          <h3>
-            <a href="blog-minesweeper-development.html"
-              >Building SG Minesweeper: Development Journey</a
-            >
-          </h3>
-          <p class="date">November 2024</p>
-          <p>
-            A deep dive into the development process of my minesweeper game,
-            covering the algorithms, design decisions, and challenges I
-            encountered along the way...
-          </p>
-        </div>
-        <div class="blog-preview">
-          <h3>
-            <a href="blog-userscripts.html"
-              >Why Userscripts Still Matter in Modern Web Development</a
-            >
-          </h3>
-          <p class="date">October 2024</p>
-          <p>
-            Exploring the continued relevance of userscripts for personalizing
-            web experiences and improving productivity across the web...
-          </p>
-        </div>
-      </section>
-    </main>
-  </body>
-  <footer>
-    <div class="footer">
-      <a href="https://github.com/palharesf/"
-        >Built by @palharesf / fernandopa</a
-      >
-      •
-      <a href="https://github.com/palharesf/palharesf.github.io"
-        >Source Code on Github</a
-      >
-      • Support me:
-      <a href="https://ko-fi.com/fernandopa"> or buy me a coffee (Ko-Fi)</a>
-    </div>
-  </footer>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
