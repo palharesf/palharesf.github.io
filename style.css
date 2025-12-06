@@ -580,11 +580,44 @@ footer a:hover {
 /* Responsive */
 @media (max-width: 768px) {
   nav {
-    padding: 20px 25px;
+    padding: 15px 20px; /* More compact on mobile */
+  }
+
+  nav.scrolled {
+    padding: 10px 20px;
+  }
+
+  /* Adjust body padding for smaller navbar */
+  body {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  /* Reduce section padding on mobile */
+  section {
+    padding: 60px 0;
+    min-height: auto; /* Don't force 100vh on mobile */
+  }
+
+  /* Make footer more compact on mobile */
+  footer {
+    padding: 12px 20px;
+    font-size: 0.8rem;
+  }
+
+  /* Footer text can wrap on very small screens */
+  footer p {
+    line-height: 1.6;
   }
 
   .container {
     padding: 0 25px;
+  }
+
+  /* Hero section specific mobile adjustments */
+  .hero {
+    min-height: calc(100vh - 70px); /* Account for navbar */
+    padding-top: 40px;
   }
 
   .hero-title {
@@ -626,6 +659,71 @@ footer a:hover {
     justify-content: flex-start;
   }
 
+  /* Stack or hide nav links on very small screens */
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 50%;
+    max-width: 220px;
+    height: calc(100vh - 70px);
+    background: var(--light-navy);
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 30px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px 0;
+  }
+
+  .nav-links a:before {
+    bottom: 5px;
+  }
+
+  .nav-links li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-links.active li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .nav-links.active li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .nav-links.active li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .logo-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
   .nav-links {
     gap: 20px;
   }
