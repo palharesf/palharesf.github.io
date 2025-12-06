@@ -510,10 +510,12 @@ footer {
   bottom: 0;
   width: 100%;
   background: var(--navy);
-  padding: 10px 50px;
+  padding: 15px 25px;
   text-align: center;
   color: var(--slate);
   font-size: 0.9rem;
+  z-index: 999; /* Below navbar but above content */
+  border-top: 1px solid var(--lightest-navy); /* Subtle separator */
 }
 
 footer a {
