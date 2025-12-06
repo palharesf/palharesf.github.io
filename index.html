@@ -10,8 +10,11 @@
     />
     <link rel="stylesheet" href="style.css" />
     <meta name="google-adsense-account" content="ca-pub-6255805898920780" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6255805898920780"
-     crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6255805898920780"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- Background Animation -->
@@ -313,10 +316,17 @@
       // Navbar scroll effect
       window.addEventListener("scroll", () => {
         const navbar = document.getElementById("navbar");
+        const body = document.body;
+
         if (window.scrollY > 100) {
           navbar.classList.add("scrolled");
+          body.classList.add("nav-scrolled");
         } else {
           navbar.classList.remove("scrolled");
+          body.classList.remove("nav-scrolled");
+        }
+      });
+
       // Hamburger menu functionality
       const hamburger = document.getElementById("hamburger");
       const navLinks = document.getElementById("navLinks");
