@@ -29,12 +29,22 @@
         <img src="/assets/pfp.png" alt="Fernando Palhares" class="logo-image" />
         <span class="logo-text">Fernando Palhares</span>
       </a>
-      <ul class="nav-links">
+
+      <!-- Hamburger button -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -254,7 +264,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -308,7 +317,37 @@
           navbar.classList.add("scrolled");
         } else {
           navbar.classList.remove("scrolled");
+      // Hamburger menu functionality
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      const menuOverlay = document.getElementById("menuOverlay");
+
+      function toggleMenu() {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        menuOverlay.classList.toggle("active");
+
+        // Prevent body scroll when menu is open
+        if (navLinks.classList.contains("active")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
         }
+      }
+
+      // Toggle menu on hamburger click
+      hamburger.addEventListener("click", toggleMenu);
+
+      // Close menu when overlay is clicked
+      menuOverlay.addEventListener("click", toggleMenu);
+
+      // Close menu when a nav link is clicked
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (navLinks.classList.contains("active")) {
+            toggleMenu();
+          }
+        });
       });
 
       // Smooth scrolling
