@@ -724,7 +724,40 @@ footer a:hover {
     display: flex;
   }
 }
+
+/* Extra small screens (<480px) */
+@media (max-width: 480px) {
   .nav-links {
-    gap: 20px;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+
+  .logo-text {
+    font-size: 1rem; /* Scale down instead of hiding */
+  }
+
+  .logo-image {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* More compact spacing */
+  body {
+    padding-top: 60px;
+    padding-bottom: 45px;
+  }
+
+  nav {
+    padding: 12px 15px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 10px 15px;
+    font-size: 0.75rem;
   }
 }
