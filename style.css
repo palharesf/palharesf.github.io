@@ -213,7 +213,7 @@ nav.scrolled {
 
 .logo-text {
   font-size: 1.5rem;
-  color: var(--green);
+  color: var(--lightest-slate);
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -303,13 +303,19 @@ section {
 }
 
 .hero-description {
-  background: var(--light-navy);
   max-width: 600px;
   font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 50px;
-  padding: 20px 25px;
+  margin-bottom: 16px;
   animation: fadeInUp 0.6s ease 0.3s backwards;
+}
+
+.hero-availability {
+  font-size: 0.85rem;
+  color: var(--light-slate);
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+  animation: fadeInUp 0.6s ease 0.35s backwards;
 }
 
 .cta-button {
@@ -377,17 +383,42 @@ section {
 
 /* About Section */
 .about-content {
-  display: block;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 60px;
+  align-items: start;
 }
 
 .about-text {
   max-width: 720px;
 }
 
+.about-photo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+.about-photo img {
+  width: 260px;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--green);
+  display: block;
+  filter: grayscale(10%);
+  box-shadow: 8px 8px 0 var(--green-tint);
+  transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-photo img:hover {
+  filter: grayscale(0%);
+  transform: translateY(-4px);
+  box-shadow: 12px 12px 0 var(--green-tint);
+}
+
 .about-text p {
-  background: var(--light-navy);
-  padding: 15px 20px;
-  margin-bottom: 15px;
+  margin-bottom: 1.25rem;
 }
 
 .tech-stack {
@@ -438,8 +469,9 @@ section {
 }
 
 .project-overline {
-  color: var(--green);
+  color: var(--light-slate);
   font-size: 0.85rem;
+  letter-spacing: 0.08em;
   margin-bottom: 10px;
 }
 
@@ -461,12 +493,7 @@ section {
   border-radius: 4px;
   box-shadow: 0 10px 30px -15px var(--shadow-dark);
   margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-description:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px -15px var(--shadow-dark-heavy);
+  color: var(--light-slate);
 }
 
 .project-tech {
@@ -480,7 +507,7 @@ section {
 }
 
 .project-card:nth-child(even) .project-tech {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .project-links {
@@ -489,7 +516,7 @@ section {
 }
 
 .project-card:nth-child(even) .project-links {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .project-links a {
@@ -553,6 +580,24 @@ section {
   filter: grayscale(0%) contrast(1) brightness(100%);
 }
 
+/* Nav Resume Link */
+.nav-resume-link {
+  color: var(--green) !important;
+  padding: 6px 14px !important;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  transition: background-color 0.3s ease !important;
+}
+
+.nav-resume-link:hover {
+  background: var(--green-tint);
+  color: var(--green) !important;
+}
+
+.nav-resume-link::before {
+  display: none !important;
+}
+
 /* Contact Section */
 .contact {
   text-align: center;
@@ -568,7 +613,48 @@ section {
 
 .contact-description {
   font-size: 1.1rem;
-  margin-bottom: 50px;
+  margin-bottom: 32px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.contact-actions .cta-button {
+  animation: none;
+}
+
+.cta-secondary {
+  border-color: var(--lightest-navy);
+  color: var(--light-slate);
+}
+
+.cta-secondary:hover {
+  background: rgba(35, 53, 84, 0.5);
+  box-shadow: none;
+  color: var(--lightest-slate);
+}
+
+.contact-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  color: var(--slate);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: var(--green);
 }
 
 /* Footer */
@@ -695,6 +781,28 @@ footer a:hover {
     padding-top: 40px;
   }
 
+  .about-content {
+    display: block;
+  }
+
+  .about-photo {
+    margin-top: 40px;
+  }
+
+  .about-photo img {
+    width: 200px;
+  }
+
+  .projects-grid {
+    gap: 48px;
+  }
+
+  .nav-resume-link {
+    border: none !important;
+    padding: 10px 0 !important;
+    font-size: 1.2rem;
+  }
+
   .project-card,
   .project-card:nth-child(even) {
     display: block;
@@ -780,6 +888,9 @@ footer a:hover {
   }
   .nav-links.active li:nth-child(3) {
     transition-delay: 0.3s;
+  }
+  .nav-links.active li:nth-child(4) {
+    transition-delay: 0.4s;
   }
 
   .logo-image {
