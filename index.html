@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fernando Palhares - Developer Portfolio</title>
+    <title>Fernando Palhares — Python & JavaScript Developer</title>
     <meta
       name="description"
-      content="Portfolio of Fernando Palhares - Python and JavaScript developer tinkering in web applications and automation tools"
+      content="Fernando Palhares — Python and JavaScript developer building browser games, web applications, and automation tools. View featured projects and source code."
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="/assets/pfp.png" as="image" />
     <meta name="google-adsense-account" content="ca-pub-6255805898920780" />
     <script
       async
@@ -17,8 +18,11 @@
     ></script>
   </head>
   <body>
+    <!-- Skip Navigation -->
+    <a href="#home" class="skip-link">Skip to main content</a>
+
     <!-- Background Animation -->
-    <div class="bg-animation">
+    <div class="bg-animation" aria-hidden="true">
       <span></span>
       <span></span>
       <span></span>
@@ -34,7 +38,7 @@
       </a>
 
       <!-- Hamburger button -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span>
         <span></span>
         <span></span>
@@ -56,11 +60,10 @@
         <h1 class="hero-title">Fernando Palhares.</h1>
         <h2 class="hero-subtitle">I build things for the web.</h2>
         <p class="hero-description">
-          I'm a developer passionate about creating practical applications and
-          tools that solve real problems. My work spans from interactive browser
-          games to automation scripts that improve daily workflows. I specialize
-          in Python and JavaScript, building everything from web applications to
-          userscripts that enhance the browsing experience.
+          I build practical tools and applications — from browser games to
+          automation scripts that improve real workflows. My work spans Python
+          and JavaScript, with a focus on lean, well-crafted code that does
+          exactly what it needs to do.
         </p>
         <a href="#projects" class="cta-button">Check out my work</a>
       </div>
@@ -73,11 +76,9 @@
         <div class="about-content">
           <div class="about-text">
             <p>
-              I'm Fernando Palhares, a developer with a passion for building
-              practical, efficient tools that solve real problems. My journey
-              into programming started with curiosity about how things work
-              under the hood, and that curiosity continues to drive my learning
-              and development today.
+              My path into programming started with curiosity — wanting to
+              understand how things worked, then build my own versions. That
+              same drive still shapes how I approach problems today.
             </p>
             <p>
               I believe in the power of simple, well-crafted code. While modern
@@ -114,7 +115,48 @@
           <!-- Project 1 -->
           <div class="project-card">
             <div class="project-content">
-              <p class="project-overline">Featured Project</p>
+              <p class="project-overline">Browser Game</p>
+              <h3 class="project-title">SG Memory Game</h3>
+              <div class="project-description">
+                A community tool for hiding giveaway secrets behind a classic
+                memory card game. Creators configure board size (4–18 pairs),
+                board mode (random or fixed layout), and optional mistake and
+                time limits. Random boards support leaderboards and personal
+                bests; players who sign in via Steam have their wins and times
+                tracked automatically.
+              </div>
+              <ul class="project-tech">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Tailwind CSS</li>
+                <li>Cloudflare Pages</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/palharesf/sg-memory-game"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a
+                >
+                <a
+                  href="https://sg-memory-game.pages.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >App</a
+                >
+              </div>
+            </div>
+            <div class="project-image">
+              <div class="project-image-wrapper">
+                <img src="assets/bg_memory.png" alt="SG Memory Game" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-content">
+              <p class="project-overline">Browser Game</p>
               <h3 class="project-title">SG Minesweeper</h3>
               <div class="project-description">
                 A modern take on the classic Minesweeper game, built entirely
@@ -133,27 +175,29 @@
                 <a
                   href="https://github.com/palharesf/sg-minesweeper"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >GitHub</a
                 >
                 <a
                   href="https://palharesf.github.io/sg-minesweeper/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >App</a
                 >
               </div>
             </div>
             <div class="project-image">
               <div class="project-image-wrapper">
-                <img src="assets/bg_minesweeper.png" alt="SG Minesweeper" />
+                <img src="assets/bg_minesweeper.png" alt="SG Minesweeper" loading="lazy" />
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project 3 -->
           <div class="project-card">
             <div class="project-content">
-              <p class="project-overline">Featured Project</p>
-              <h3 class="project-title">Rei do Casino (Casino Tracker)</h3>
+              <p class="project-overline">Web Application</p>
+              <h3 class="project-title">Rei do Casino</h3>
               <div class="project-description">
                 A web application designed to help users track earnings on their
                 casino visits. Built with React and Firebase, it offers user
@@ -170,26 +214,28 @@
                 <a
                   href="https://github.com/palharesf/rei_do_casino"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >GitHub</a
                 >
                 <a
                   href="https://palharesf.github.io/rei_do_casino/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >App</a
                 >
               </div>
             </div>
             <div class="project-image">
               <div class="project-image-wrapper">
-                <img src="assets/bg_casino.png" alt="Casino Tracker" />
+                <img src="assets/bg_casino.png" alt="Casino Tracker" loading="lazy" />
               </div>
             </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project 4 -->
           <div class="project-card">
             <div class="project-content">
-              <p class="project-overline">Featured Project</p>
+              <p class="project-overline">Browser Automation</p>
               <h3 class="project-title">Userscripts Collection</h3>
               <div class="project-description">
                 A curated collection of userscripts designed to enhance web
@@ -208,11 +254,13 @@
                 <a
                   href="https://github.com/palharesf/user_scripts"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >GitHub</a
                 >
                 <a
                   href="https://greasyfork.org/en/users/1517434-palharesf"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >Greasy Fork</a
                 >
               </div>
@@ -222,15 +270,16 @@
                 <img
                   src="assets/bg_greasyfork.png"
                   alt="Userscripts Collection"
+                  loading="lazy"
                 />
               </div>
             </div>
           </div>
 
-          <!-- Project 4 -->
+          <!-- Project 5 -->
           <div class="project-card">
             <div class="project-content">
-              <p class="project-overline">Featured Project</p>
+              <p class="project-overline">Practice Repository</p>
               <h3 class="project-title">freeCodeCamp Daily Challenges</h3>
               <div class="project-description">
                 A collection of daily coding challenges from freeCodeCamp,
@@ -249,11 +298,13 @@
                 <a
                   href="https://github.com/palharesf/fcc_daily_challenges"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >GitHub</a
                 >
                 <a
                   href="https://www.freecodecamp.org/learn/daily-coding-challenge/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >Daily Challenge Page</a
                 >
               </div>
@@ -263,6 +314,7 @@
                 <img
                   src="assets/bg_fcc.png"
                   alt="Daily Challenges Collection"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -278,15 +330,16 @@
           <p class="hero-intro">What's Next?</p>
           <h2 class="contact-title">Get In Touch</h2>
           <p class="contact-description">
-            I'm always interested in connecting with other developers,
-            discussing projects, or hearing feedback on my work. Whether you
-            have a question or just want to say hi, feel free to reach out!
+            I'm always open to connecting — whether it's about a project,
+            feedback on my work, or just a conversation about code. Find me
+            on GitHub, or browse the source behind any of these projects.
           </p>
           <a
             href="https://github.com/palharesf"
             class="cta-button"
             target="_blank"
-            >Say Hello</a
+            rel="noopener noreferrer"
+            >Find Me on GitHub</a
           >
         </div>
       </div>
@@ -296,36 +349,45 @@
     <footer>
       <p>
         Built by
-        <a href="https://github.com/palharesf" target="_blank"
+        <a href="https://github.com/palharesf" target="_blank" rel="noopener noreferrer"
           >Fernando Palhares</a
         >
         •
         <a
           href="https://github.com/palharesf/palharesf.github.io"
           target="_blank"
+          rel="noopener noreferrer"
           >View Source</a
         >
         •
-        <a href="https://ko-fi.com/fernandopa" target="_blank"
+        <a href="https://ko-fi.com/fernandopa" target="_blank" rel="noopener noreferrer"
           >Buy me a coffee</a
         >
       </p>
     </footer>
 
     <script>
-      // Navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const navbar = document.getElementById("navbar");
-        const body = document.body;
+      // Navbar scroll effect — throttled to one update per animation frame
+      const navbar = document.getElementById("navbar");
+      let scrollTicking = false;
 
+      function updateNavbar() {
         if (window.scrollY > 100) {
           navbar.classList.add("scrolled");
-          body.classList.add("nav-scrolled");
+          document.body.classList.add("nav-scrolled");
         } else {
           navbar.classList.remove("scrolled");
-          body.classList.remove("nav-scrolled");
+          document.body.classList.remove("nav-scrolled");
         }
-      });
+        scrollTicking = false;
+      }
+
+      window.addEventListener("scroll", () => {
+        if (!scrollTicking) {
+          requestAnimationFrame(updateNavbar);
+          scrollTicking = true;
+        }
+      }, { passive: true });
 
       // Hamburger menu functionality
       const hamburger = document.getElementById("hamburger");
@@ -337,12 +399,13 @@
         navLinks.classList.toggle("active");
         menuOverlay.classList.toggle("active");
 
+        const isOpen = navLinks.classList.contains("active");
+
+        // Update ARIA state
+        hamburger.setAttribute("aria-expanded", isOpen);
+
         // Prevent body scroll when menu is open
-        if (navLinks.classList.contains("active")) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "";
-        }
+        document.body.style.overflow = isOpen ? "hidden" : "";
       }
 
       // Toggle menu on hamburger click

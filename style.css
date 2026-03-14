@@ -4,6 +4,43 @@
   box-sizing: border-box;
 }
 
+/* Skip Navigation */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.25rem;
+  background: var(--green);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Global focus styles */
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 :root {
   --navy: #0a192f;
   --light-navy: #112240;
@@ -14,6 +51,14 @@
   --white: #e6f1ff;
   --green: #64ffda;
   --green-tint: rgba(100, 255, 218, 0.1);
+
+  /* Opacity variants */
+  --navy-glass: rgba(10, 25, 47, 0.85);     /* nav bar background */
+  --shadow-dark: rgba(2, 12, 27, 0.7);      /* standard elevation shadow */
+  --shadow-dark-heavy: rgba(2, 12, 27, 0.9); /* elevated hover shadow */
+  --overlay: rgba(0, 0, 0, 0.5);            /* menu backdrop overlay */
+  --shadow-panel: rgba(0, 0, 0, 0.3);       /* side-panel shadow */
+
   --nav-height: 85px;
   --footer-height: 60px;
 }
@@ -33,7 +78,7 @@ body.nav-scrolled {
   padding-top: 75px;
 }
 
-/* Background Image */
+/* Background Image - structural layer only on mobile; image loaded on desktop only */
 body::before {
   content: "";
   position: fixed;
@@ -41,12 +86,17 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/background.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   opacity: 0.15;
   z-index: 0;
+}
+
+@media (min-width: 769px) {
+  body::before {
+    background-image: url("/assets/background.jpeg");
+  }
 }
 
 /* Animated background particles overlay */
@@ -126,14 +176,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: rgba(10, 25, 47, 0.85);
+  background: var(--navy-glass);
   backdrop-filter: blur(10px);
   transition: padding 0.3s ease;
 }
 
 nav.scrolled {
   padding: 15px 50px;
-  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+  box-shadow: 0 10px 30px -10px var(--shadow-dark);
 }
 
 .logo {
@@ -165,6 +215,9 @@ nav.scrolled {
   font-size: 1.5rem;
   color: var(--green);
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -177,6 +230,7 @@ nav.scrolled {
   color: var(--lightest-slate);
   text-decoration: none;
   font-size: 0.9rem;
+  letter-spacing: 0.05em;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -211,6 +265,7 @@ nav.scrolled {
 
 section {
   min-height: 100vh;
+  min-height: 100svh; /* Excludes mobile browser chrome (iOS Safari address bar) */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -220,6 +275,7 @@ section {
 /* Hero Section */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 .hero-intro {
@@ -230,15 +286,16 @@ section {
 }
 
 .hero-title {
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 6vw, 4.5rem);
   color: var(--lightest-slate);
   font-weight: 700;
   margin-bottom: 10px;
   animation: fadeInUp 0.6s ease 0.1s backwards;
+  overflow-wrap: break-word;
 }
 
 .hero-subtitle {
-  font-size: 4rem;
+  font-size: clamp(1.5rem, 5vw, 4rem);
   color: var(--slate);
   font-weight: 700;
   margin-bottom: 30px;
@@ -251,6 +308,7 @@ section {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 50px;
+  padding: 20px 25px;
   animation: fadeInUp 0.6s ease 0.3s backwards;
 }
 
@@ -262,7 +320,7 @@ section {
   text-decoration: none;
   border-radius: 4px;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   background: transparent;
   animation: fadeInUp 0.6s ease 0.4s backwards;
 }
@@ -271,6 +329,11 @@ section {
   background: var(--green-tint);
   transform: translateY(-3px);
   box-shadow: 0 10px 30px -10px var(--green);
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px -10px var(--green);
 }
 
 @keyframes fadeInUp {
@@ -314,14 +377,16 @@ section {
 
 /* About Section */
 .about-content {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 50px;
-  align-items: center;
+  display: block;
+}
+
+.about-text {
+  max-width: 720px;
 }
 
 .about-text p {
   background: var(--light-navy);
+  padding: 15px 20px;
   margin-bottom: 15px;
 }
 
@@ -359,12 +424,8 @@ section {
   gap: 40px;
 }
 
-.project-card:nth-child(even) {
-  direction: rtl;
-}
-
-.project-card:nth-child(even) > * {
-  direction: ltr;
+.project-card:nth-child(even) .project-image {
+  order: -1; /* Move image to first column without affecting text direction */
 }
 
 .project-card:nth-child(even) .project-content {
@@ -387,6 +448,7 @@ section {
   color: var(--lightest-slate);
   margin-bottom: 20px;
   transition: color 0.3s ease;
+  overflow-wrap: break-word;
 }
 
 .project-title:hover {
@@ -397,14 +459,14 @@ section {
   background: var(--light-navy);
   padding: 25px;
   border-radius: 4px;
-  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  box-shadow: 0 10px 30px -15px var(--shadow-dark);
   margin-bottom: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-description:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px -15px rgba(2, 12, 27, 0.9);
+  box-shadow: 0 20px 40px -15px var(--shadow-dark-heavy);
 }
 
 .project-tech {
@@ -434,7 +496,10 @@ section {
   color: var(--lightest-slate);
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 4px;
+  min-height: 44px;
 }
 
 .project-links a:hover {
@@ -496,7 +561,7 @@ section {
 }
 
 .contact-title {
-  font-size: 3rem;
+  font-size: clamp(1.75rem, 4vw, 3rem);
   color: var(--lightest-slate);
   margin-bottom: 20px;
 }
@@ -537,7 +602,8 @@ footer a:hover {
   left: 0;
   width: 100%;
   height: calc(100vh - 70px);
-  background: rgba(0, 0, 0, 0.5);
+  height: calc(100svh - 70px);
+  background: var(--overlay);
   z-index: 999;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -554,17 +620,21 @@ footer a:hover {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
   background: transparent;
   border: none;
   z-index: 1001;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
   background: var(--green);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   border-radius: 2px;
   display: block;
 }
@@ -620,20 +690,9 @@ footer a:hover {
 
   /* Hero section specific mobile adjustments */
   .hero {
-    min-height: calc(100vh - 70px); /* Account for navbar */
+    min-height: calc(100vh - 70px);
+    min-height: calc(100svh - 70px);
     padding-top: 40px;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 2rem;
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
   }
 
   .project-card,
@@ -651,6 +710,11 @@ footer a:hover {
   .project-card:nth-child(even) .project-image {
     grid-column: unset;
     margin-top: 20px;
+    order: unset;
+  }
+
+  .project-image-wrapper {
+    height: 220px;
   }
 
   .project-tech,
@@ -671,17 +735,20 @@ footer a:hover {
     width: 50%;
     max-width: 220px;
     height: calc(100vh - 70px);
+    height: calc(100svh - 70px);
     background: var(--light-navy);
     flex-direction: column;
     padding: 40px 30px;
     gap: 30px;
-    transition: right 0.3s ease;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease, visibility 0.3s ease;
+    box-shadow: -5px 0 15px var(--shadow-panel);
     overflow-y: auto;
+    visibility: hidden;
   }
 
   .nav-links.active {
     right: 0;
+    visibility: visible;
   }
 
   .nav-links a {
@@ -697,7 +764,7 @@ footer a:hover {
   .nav-links li {
     opacity: 0;
     transform: translateX(20px);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .nav-links.active li {
@@ -726,6 +793,19 @@ footer a:hover {
 
   .hamburger {
     display: flex;
+  }
+}
+
+/* Landscape / short viewport — prevents sections from being taller than the screen on rotated phones */
+@media (max-height: 500px) {
+  section {
+    min-height: auto;
+    padding: 50px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 80px 0 50px;
   }
 }
 
