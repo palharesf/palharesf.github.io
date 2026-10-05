@@ -70,12 +70,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   padding-top: var(--nav-height); /* Height of navbar */
-  padding-bottom: var(--footer-height); /* Height of footer */
-}
 
-/* Adjust padding when navbar scrolls and becomes smaller */
-body.nav-scrolled {
-  padding-top: 75px;
 }
 
 /* Background Image - structural layer only on mobile; image loaded on desktop only */
@@ -264,8 +259,7 @@ nav.scrolled {
 }
 
 section {
-  min-height: 100vh;
-  min-height: 100svh; /* Excludes mobile browser chrome (iOS Safari address bar) */
+  scroll-margin-top: 85px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -274,8 +268,7 @@ section {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: min(680px, calc(100svh - var(--nav-height)));
 }
 
 .hero-intro {
@@ -460,7 +453,7 @@ section {
 }
 
 .project-card:nth-child(even) .project-content {
-  text-align: right;
+  text-align: left;
 }
 
 .project-content {
@@ -558,7 +551,7 @@ section {
   height: 100%;
   background: var(--navy);
   mix-blend-mode: screen;
-  opacity: 0.3;
+  opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 2;
 }
@@ -572,12 +565,56 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%) contrast(1) brightness(90%);
+  filter: none;
   transition: filter 0.3s ease;
 }
 
 .project-image-wrapper:hover img {
   filter: grayscale(0%) contrast(1) brightness(100%);
+}
+
+.more-projects {
+  margin-top: 64px;
+}
+
+.more-projects h3 {
+  color: var(--lightest-slate);
+  margin-bottom: 24px;
+  font-size: 1.3rem;
+}
+
+.more-projects ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 24px;
+}
+
+.more-projects li {
+  border-top: 1px solid var(--lightest-navy);
+  padding-top: 20px;
+}
+
+.more-projects a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--lightest-slate);
+  text-decoration: none;
+}
+
+.more-projects a:hover {
+  color: var(--green);
+}
+
+.more-projects p {
+  color: var(--light-slate);
+  font-size: 0.9rem;
+}
+
+.more-projects .more-source {
+  font-size: 0.85rem;
+  color: var(--green);
 }
 
 /* HLTB project flow */
@@ -715,8 +752,7 @@ section {
 
 /* Footer */
 footer {
-  position: fixed;
-  bottom: 0;
+  position: relative;
   width: 100%;
   background: var(--navy);
   padding: 15px 25px;
@@ -806,7 +842,7 @@ footer a:hover {
   /* Adjust body padding for smaller navbar */
   body {
     padding-top: 70px;
-    padding-bottom: 50px;
+
   }
 
   /* Reduce section padding on mobile */
@@ -995,7 +1031,7 @@ footer a:hover {
   /* More compact spacing */
   body {
     padding-top: 60px;
-    padding-bottom: 45px;
+
   }
 
   nav {
