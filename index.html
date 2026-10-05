@@ -76,6 +76,42 @@
       <div class="container">
         <h2 class="section-heading">Featured Projects</h2>
         <div class="projects-grid">
+          <!-- HLTB Sync for Deck -->
+          <article class="project-card" aria-labelledby="hltb-project-title">
+            <div class="project-content">
+              <p class="project-overline">Steam Deck Plugin · Public Beta</p>
+              <h3 class="project-title" id="hltb-project-title">HLTB Sync for Deck</h3>
+              <div class="project-description">
+                A Decky plugin that tracks gaming sessions and updates your
+                HowLongToBeat account when you close a game. Runs entirely on
+                the Steam Deck, excludes suspended time, and saves sessions
+                offline. Confident matches sync automatically while existing
+                notes, ratings, and completion status stay intact.
+              </div>
+              <ul class="project-tech">
+                <li>TypeScript</li>
+                <li>React</li>
+                <li>Python</li>
+                <li>SQLite</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/palharesf/decky-hltb-sync"
+                  target="_blank" rel="noopener noreferrer">Source</a>
+                <a href="https://github.com/palharesf/decky-hltb-sync/releases/tag/v0.3.16"
+                  target="_blank" rel="noopener noreferrer">Beta &amp; Limitations</a>
+              </div>
+            </div>
+            <div class="project-image hltb-flow" aria-label="Session sync flow: play on Deck, save active time locally, then sync to HLTB after exit.">
+              <p class="hltb-flow-label">FROM PLAY TO PROGRESS</p>
+              <ol>
+                <li><span class="hltb-flow-step" aria-hidden="true">01</span><div><strong>Play on Deck</strong><span>Steam &amp; direct Non-Steam shortcuts</span></div></li>
+                <li><span class="hltb-flow-step" aria-hidden="true">02</span><div><strong>Save active time</strong><span>Persistent sessions · Suspension excluded</span></div></li>
+                <li><span class="hltb-flow-step" aria-hidden="true">03</span><div><strong>Sync to HLTB</strong><span>After exit · Preserve existing records</span></div></li>
+              </ol>
+              <p class="hltb-flow-note">On-device tracking. No PC required.</p>
+            </div>
+          </article>
+
           <!-- Project 1 -->
           <div class="project-card">
             <div class="project-content">
